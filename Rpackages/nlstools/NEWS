@@ -1,0 +1,63 @@
+=== nlstools : Tools for nonlinear regression diagnostics ===
+
+Version 0.0-14
+=============
+
+NEW FEATURES
+
+- update of email adresses, creation of a separate folder vignettes, and diminution of the number of iterations in the example for nlsBoot
+and of the number of points in the confidence region  for nlsConfRegions, in order to accelerate the test of examples.
+
+
+Version 0.0-13
+=============
+
+BUG FIXES
+
+- Fixed .First.lib issue by removing unnecessary First.lib.R
+
+
+Version 0.0-12
+=============
+
+NEW FEATURES
+
+- plot.nlsContourRSS was updated with an extra argument useRaster (= TRUE by default) so that a bitmap raster is used in the image displaying the contours
+
+BUG FIXES
+
+- plotfit function was modified in order to avoid that different independent variables are used in the plot and points statement (thanks to the help of Wolfgang Kraus)
+
+
+Version 0.0-11
+=============
+
+NEW FEATURES
+
+- Update of the function 'plotfit': the default independent variable represented
+in the plot is the first independent variable
+
+Version 0.0-10
+=============
+
+NEW FEATURES
+
+- New models for predictive microbiology : models for simultaneous growth of
+two competitive bacterial flora
+
+
+Version 0.0-9
+=============
+
+NEW FEATURES
+
+- More graphical flexibilities
+
+BUG FIXES
+
+- Bootstrap confidence interval was not correctly specified
+
+Version 0.0-1
+=============
+
+- Initial release.

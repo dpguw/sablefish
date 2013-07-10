@@ -1,0 +1,17 @@
+ALKr-package	ALKr
+age_slicing	age_slicing
+ALKr	ALKr
+ALKr-class	ALKr-class
+calc_ALK	calc_ALK
+calc_invALK	calc_invALK
+classic_ALK	classic_ALK
+gascuel	inverse_ALK
+hoenig	hoenig
+hoenig_heisey	inverse_ALK
+hom	hom
+inverse_ALK	inverse_ALK
+kimura_chikuni	inverse_ALK
+summary.ALKr	summary.ALKr
+summary_ALKr-class	summary_ALKr-class
+[	extract-methods
+[,ALKr-method	extract-methods

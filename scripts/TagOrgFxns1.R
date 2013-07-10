@@ -308,12 +308,16 @@ assignSexFxn<-function(releasedf)
   
   dimnames(ee)[[2]]<-1:2
   dimnames(ee)[[1]]=names(cc)
-  releasedf<-ageKey(ee,releasedf,"lengthTrunc","sex")     
+  #original ageKey()
+  #releasedf<-ageKey(ee,releasedf,"lengthTrunc","sex",type ="CR") 
+  releasedf<-ageKey(key=ee,formula=sex~lengthTrunc,data=releasedf,type ="CR") 
+  
   return(releasedf)
 }
 #############################################################
 assignSexWrapFxn<-function(releasedf)
 {
+  releasedf$sex <- rep(NA,nrow(releasedf))
   aa <- split(releasedf,list(as.factor(releasedf$HaulYear),
                             as.factor(releasedf$release.area)),
               drop=TRUE)
@@ -532,7 +536,7 @@ alkYearsAgeDataFxn <-function(
   
   tempagekey <- NULL
   tempagekey <-  prop.table(cc,margin=1)
-  dd <-  ageKey(tempagekey,rr,"lengthBin","age")
+  dd <-  ageKey(tempagekey,rr,"lengthBin","age",type ="CR")
   
   return(dd)
 }

@@ -1,0 +1,47 @@
+Package: FSA
+Version: 0.4.1
+Title: Functions to support simple fisheries stock assessment methods.
+Description: This package can be used to peform a variety of simple fish stock
+    assessment methods found in a typical undergraduate or beginning
+    graduate-level fisheries science course.  These functions and simulations
+    are designed primarily to aid learning by students in these courses but
+    they may also be useful to practicing professional biologists.  Some
+    vignettes are available on the fishR website listed below.
+Author: Derek H. Ogle <dogle@northland.edu>
+Maintainer: Derek H. Ogle <dogle@northland.edu>
+Depends: R (>= 2.14.0), reshape, tcltk
+Imports: car, gdata, gplots, Hmisc, knitr, multcomp, nlme, plotrix,
+        relax, quantreg, sciplot, TeachingDemos
+Suggests: nlstools, Rcapture
+License: GPL (>= 2)
+URL: http://www.rforge.net/FSA/, http://fishr.wordpress.com/
+Collate: 'addRadCap.R' 'addZeroCatch.R' 'ageComp.R' 'ageKey.R'
+        'bcFuns.R' 'binCI.R' 'BluegillJL.R' 'BluegillLM.R' 'bootCase.R'
+        'BrookTroutTH.R' 'capFirst.R' 'capHistConvert.R' 'capHistSum.R'
+        'catchCurve.R' 'catchCurveSim.R' 'chapmanRobson.R'
+        'chooseColors.R' 'CodNorwegian.R' 'cohortSim.R'
+        'confint.nlsBoot.R' 'CutthroatAL.R' 'depletion.R' 'Ecoli.R'
+        'emp.R' 'fact2num.R' 'fishR.R' 'fitPlot.R' 'FroeseWs.R'
+        'FSA-internals.R' 'FSA.R' 'gConvert.R' 'gReshape.R'
+        'growthModels.R' 'growthModelSim.R' 'growthRadPlot.R'
+        'hist.formula.R' 'histStack.R' 'hoCoef.R' 'htest.nlsBoot.R'
+        'hyperCI.R' 'KS2D_NR.R' 'ksTest.R' 'lagratio.R' 'lencat.R'
+        'lenFreqExpand.R' 'leslieSim.R' 'LMBassWs.R' 'lwModelSim.R'
+        'lwPredsComp.R' 'Mirex.R' 'mrClosed.R' 'mrClosed1Sim.R'
+        'mrOpen.R' 'odd.R' 'paletteChoices.R' 'PikeNY.R'
+        'PikeNYPartial1.R' 'plotBinResp.R' 'plotH.R' 'poiCI.R'
+        'popSizesPlot.R' 'pos2adj.R' 'rcumsum.R' 'removal.R'
+        'residPlot.R' 'rlp.R' 'RuffeWs.R' 'simAgeBias.R' 'simAges.R'
+        'simLenFromAge.R' 'simLenSelect.R' 'SMBassLS.R' 'SMBassWB.R'
+        'SpotVA1.R' 'srFuns.R' 'srModels.R' 'srSim.R' 'srStarts.R'
+        'StripedBass1.R' 'Subset.R' 'Summarize.R' 'swvUtil.R'
+        'tictactoe.R' 'tictactoeAdd.R' 'typeoflm.R' 'vbComp.R'
+        'vbDataGen.R' 'vbFuns.R' 'VBGMlit.R' 'vbStarts.R' 'view.R'
+        'walfordChapmanPlot.R' 'WalleyeGerowLW.R' 'WR79.R' 'wrAdd.R'
+        'WSlit.R' 'wsVal.R' 'wsValidate.R' 'fsaNews.R' 'dietOverlap.R'
+        'TroutDietSL.R' 'predict.nlsBoot.R' 'srCobWeb.R'
+        'recodeSpecies.R' 'wrDataPrep.R' 'pssCalc.R' 'pssDataPrep.R'
+        'PSSlit.R' 'pssPlot.R' 'pssVal.R' 'Garvey1.R' 'Garvey4a.R'
+        'ks2d1.R' 'ks2d2.R' 'ks2d2p.R' 'ks2d1p.R'
+Packaged: 2013-06-28 17:43:00 UTC; svnuser
+Built: R 2.15.3; ; 2013-07-10 19:56:50 UTC; windows

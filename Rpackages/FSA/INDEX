@@ -1,0 +1,217 @@
+BluegillJL              Capture histories (2 samples) of bluegill from
+                        Jackson Lake.
+BluegillLM              Length and weight of bluegill from Lake Mary,
+                        MN.
+BrookTroutTH            Catch-at-age for Tobin Harbor, Isle Royale
+                        brook trout.
+CodNorwegian            Stock and recruitment data for Norwegian
+                        cod,1937-1960.
+CutthroatAL             Capture histories (3 samples) of cutthroat
+                        trout from Auke Lake.
+Ecoli                   Population growth of Escherchia coli.
+FSA                     Fisheries stock assessment methods and data.
+FroeseWs                Computes the standard weight equation using the
+                        methods described in Froese (2006).
+Garvey1                 Number of Ameletus and Leuctra per benthic core
+                        in pools in Ohio headwater streams.
+Garvey4a                Desity of shad captured in offshore zones and
+                        sunfish seined in inshore areas of four Ohio
+                        reservoirs across 22 years.
+KS2D_NR                 Data from Figure 14.7.1 of Numerical Recipes
+LMBassWs                Length-weight regression results for computing
+                        Ws for largemouth bass.
+Mirex                   Mirex concentration, weight, capture year, and
+                        species of Lake Ontario salmon.
+PSSlit                  Gabelhouse five-cell length categories for
+                        various species.
+PikeNY                  Summarized multiple mark-recapture data for all
+                        northern pike from Buckthorn Marsh.
+PikeNYPartial1          Capture histories (4 samples), in capture
+                        history format, of a subset of northern pike
+                        from Buckthorn Marsh.
+RuffeWs                 Raw Length-weight data that can be used to
+                        compute the Ws for ruffe.
+SMBassLS                Catch-effort data for Little Silver Lake
+                        smallmouth bass.
+SMBassWB                Growth increment data for West Bearskin Lake
+                        smallmouth bass.
+SpotVA1                 Age and length of spot.
+StripedBass1            Age of striped bass assigned from scales and
+                        otoliths.
+Subset                  Subsets a data frame and drops the unused
+                        levels.
+Summarize               Summary statistics for a numeric or factor
+                        variable.
+TroutDietSL             Size and diet data for lake and bull trout from
+                        Swan Lake, Montana.
+VBGMlit                 Von Bertalanffy parameter estimates from the
+                        literature.
+WR79                    Age and length for a hypothetical sample from
+                        Westerheim and Ricker (1979).
+WSlit                   Standard weight equations for various species.
+WalleyeGerowLW          Raw length-weight data that can be used to
+                        compute the Ws for walleye as performed in
+                        Gerow (2005).
+addRadCap               Add a total radius-at-capture variable to a
+                        data frame that contains one-fish-per-line
+                        increments data.
+addZeroCatch            Adds zero catch values for sampling events and
+                        species that were not captured.
+ageComp                 Results for comparing paired sets of ages.
+ageKey                  Applies an age-length key to individuals in a
+                        length-sample.
+bcFuns                  Creates a function for a specific
+                        back-calculation model.
+binCI                   Confidence intervals for binomial probability
+                        of success.
+capFirst                Capitalizes ONLY the first letter in a string.
+capHistConvert          Convert between different capture history
+                        recording types.
+capHistSum              Summarize individual fish capture histories.
+catchCurve              Mortality estimates from the descending limb of
+                        a catch curve.
+catchCurveSim           Dynamics plots to explore catch-curve models.
+chapmanRobson           Computes Chapman-Robson estimates of S and Z.
+chooseColors            Create a list of colors from among a variety of
+                        color palettes.
+cohortSim               Dynamics plots to explore numbers in a cohort
+                        over time.
+confint.bootCase        Associated S3 methods for bootCase from car.
+confint.nlsBoot         Construct a confidence interval from nlsBoot
+                        results.
+depletion               Computes the Leslie or Delury population
+                        estimate from catch and effort data.
+dietOverlap             Computes indices of diet overlap between two
+                        species.
+emp                     Computes the standard weight equation using the
+                        emperical-percentile method.
+fact2num                Converts "numeric" factor levels to numeric
+                        values.
+fishR                   Opens web pages associated with the fishR site.
+fitPlot                 Fitted model plot for an lm, glm, or nls
+                        object.
+fsaNews                 Read news and changes in the 'FSA' package.
+gConvert                Converts between growth measurement data types.
+gReshape                Reshapes a one-fish-per-line data frame to a
+                        one-measurement-per-line data frame.
+growthModelSim          Dynamics plots to explore typical fisheries
+                        growth models.
+growthModels            Show the growth model formulas implemented in
+                        the FSA package.
+growthRadPlot           Constructs skeleton plots of radial or
+                        proportional radial measurements made at annuli
+                        on fish calcified structures.
+hist.formula            Creates separate histograms by levels.
+histStack               Stacked histogram.
+hoCoef                  Performs a hypothesis test that a parameter in
+                        a linear model is equal to some specific value.
+htest                   Constructs a p-value for a bootstrapped
+                        hypothesis test using nlsBoot.
+hyperCI                 Confidence interval for population size (N) in
+                        hypergeometric distribution.
+ks2d1                   Computes the D test statistic for the
+                        one-sample two-dimensional Kolmogrov-Smirnov
+                        test.
+ks2d1p                  A permutation test to compute a p-value for the
+                        D test statistic for the one-sample
+                        two-dimensional Kolmogrov-Smirnov test.
+ks2d2                   Computes the D test statistic for the
+                        two-sample two-dimensional Kolmogrov-Smirnov
+                        test.
+ks2d2p                  A permutation test to compute a p-value for the
+                        D test statistic for the two-sample
+                        two-dimensional Kolmogrov-Smirnov test.
+ksTest                  Kolmogorov-Smirnov Tests.
+lagratio                Ratio of lagged observations.
+lenFreqExpand           Expands a length frequency based on a
+                        subsample.
+lencat                  Constructs length class/category variable.
+leslieSim               Dynamic plots to explore the Leslie depletion
+                        model.
+lwModelSim              Dynamics plots to explore length-weight power
+                        function models.
+lwPredsComp             Constructs plots of predicted weights at given
+                        lengths among different groups.
+mrClosed                Estimate initial population size for single or
+                        multiple census mark-recapture data.
+mrClosed1Sim            Dynamics plots to explore single-census
+                        mark-recapture models.
+mrOpen                  Estimate initial population size for multiple
+                        census mark-recapture data from an open
+                        population.
+odd                     Determines if a number is odd.
+paletteChoices          Provides a vector of possible color palettes.
+plotBinResp             Plots a binary response variable versus a
+                        quantitative explanatory variable.
+plotH                   Scatterplot with histogram-like bars.
+poiCI                   Confidence interval for Poisson rate parameter.
+popSizesPlot            Constructs a plot of population size versus
+                        time from the projection of Leslie matrix.
+pos2adj                 Convert a "directional" position to "adj"
+                        values for labeling a point.
+predict.nlsBoot         Constructs a prediction and confidence interval
+                        from nlsBoot results.
+psdVal                  Finds Gabelhouse five-cell length categories
+                        (for PSS) for a particular species.
+pssCalc                 Convenience function for caculating PSS-X
+                        values.
+pssDataPrep             Add five-cell length categories specific to a
+                        species to an entire data frame.
+pssPlot                 Length-frequency histogram with PSS-X
+                        categories highlighted.
+rcumsum                 Computes the reverse cumulative sum of a
+                        vector.
+recodeSpecies           Recodes species names according to user choice
+                        or to have capitalization only for the first
+                        word in the name.
+removal                 Computes population estimates for k-, 3-, or
+                        2-pass removal data.
+residPlot               Construct a residual plot from lm or nls
+                        objects.
+rlp                     Computes the standard weight equation using the
+                        regression-line-percentile method.
+simAgeBias              Simulate an age bias and simulate the ages of
+                        fish using the age bias.
+simAges                 Simulate an age structure.
+simLenFromAge           Simulate fish length from given ages.
+simLenSelectP           Simulate sampling fish based on length
+                        selectivity.
+srCobWeb                Plots typical fisheries stock-recruitment
+                        models with cobwebbing traces.
+srFuns                  Creates a function for a specific
+                        stock-recruitment model parameterization.
+srModels                Show the stock-recruitment model formulas
+                        implemented in FSA.
+srSim                   Dynamic plots to explore typical fisheries
+                        stock-recruitment models.
+srStarts                Finds reasonable starting values for the
+                        parameters in a specific stock-recruitment
+                        model parameterization.
+swvCounts               Specific utilities for use in a Sweave/knitr
+                        document.
+tictactoe               Constructs the base tic-tac-toe graph for
+                        presenting predator-prey PSS values.
+tictactoeAdd            Adds point and confidence intervals for
+                        observed preator-prey PSS to tic-tac-toe graph.
+typeoflm                Identify specific model type from lm object.
+vbComp                  Evaluates and plots the traditional von
+                        Bertalanffy growth model for several sets of
+                        parameter choices.
+vbDataGen               Randomly create a von Bertalanffy data set.
+vbFuns                  Creates a function for a specific von
+                        Bertalanffy parameterization.
+vbStarts                Finds reasonable starting values for the
+                        parameters in a specific von Bertalanffy model
+                        parameterization.
+view                    Shows a random selection of rows from a data
+                        frame or matrix.
+walfordPlot             Constructs Ford-Walford and Chapman plots for
+                        mean length-at-age data.
+wrAdd                   Appends standard weight and relative weight
+                        variables to a data frame.
+wrDataPrep              Add standard and relative weights specific to a
+                        species to an entire data frame.
+wsVal                   Finds standard weight equation coefficients for
+                        a particular species.
+wsValidate              Methods to assess length-bias in a proposed
+                        standard weight equation.
