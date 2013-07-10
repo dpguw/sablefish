@@ -1,0 +1,16 @@
+ALKr                    Calculating Age-Length Keys from incomplete
+                        data
+ALKr-class              ALKr
+[                       Extract elements of ALKr class
+age_slicing             Age slicing
+calc_ALK                Classic ALK
+calc_invALK             Classic ALK
+classic_ALK             Classic Age-Length Key
+gascuel                 Age-Length Key by the methods based on inverse
+                        ALKs
+hoenig                  Age-Length Key by the Hoening _et al._ (1993,
+                        1994) method
+hom                     Horse mackerel (Trachurus trachurus) off the
+                        portuguese coast
+summary.ALKr            Summarizing ALK Estimations
+summary_ALKr-class      Summary of an ALKr object
