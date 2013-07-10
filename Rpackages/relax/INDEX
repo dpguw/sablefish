@@ -1,0 +1,17 @@
+CodeChunkPlayer         CodeChunkPlayer, ConstructDemo - tools for
+                        browsing and evaluation of code chunks
+args.player             An interactive Tcl/Tk Tool for Evaluation of
+                        Functions Calls
+cat                     modified version of cat for relax
+menu                    modified version of menu for relax
+playground              playground for testing R code
+print                   modified version of print for relax
+readline                modified version of readline for relax
+relax                   R editor: relax
+scan                    modified version of scan for relax
+slider                  slider / button control widgets
+step                    modified version of step for relax
+str                     modified version of str for relax
+tangleR                 function to tangle a file
+weaveR                  function to weave a file
+weaveRhtml              function to weave a rev-file to a html-file

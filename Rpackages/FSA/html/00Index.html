@@ -1,0 +1,604 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Functions to support simple fisheries stock assessment methods.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+<h1> Functions to support simple fisheries stock assessment methods.
+<img class="toplogo" src="../../../doc/html/logo.jpg" alt="[R logo]">
+</h1>
+<hr>
+<div align="center">
+<a href="../../../doc/html/packages.html"><img src="../../../doc/html/left.jpg" alt="[Up]" width="30" height="30" border="0"></a>
+<a href="../../../doc/html/index.html"><img src="../../../doc/html/up.jpg" alt="[Top]" width="30" height="30" border="0"></a>
+</div><h2>Documentation for package &lsquo;FSA&rsquo; version 0.4.1</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+<li><a href="../NEWS">Package NEWS</a>.</li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<p align="center">
+<a href="# "> </a>
+<a href="#A">A</a>
+<a href="#B">B</a>
+<a href="#C">C</a>
+<a href="#D">D</a>
+<a href="#E">E</a>
+<a href="#F">F</a>
+<a href="#G">G</a>
+<a href="#H">H</a>
+<a href="#K">K</a>
+<a href="#L">L</a>
+<a href="#M">M</a>
+<a href="#O">O</a>
+<a href="#P">P</a>
+<a href="#R">R</a>
+<a href="#S">S</a>
+<a href="#T">T</a>
+<a href="#V">V</a>
+<a href="#W">W</a>
+</p>
+
+<table width="100%">
+<tr><td width="25%"><a href="FSA.html">FSA-package</a></td>
+<td>Fisheries stock assessment methods and data.</td></tr>
+</table>
+
+<h2><a name="A">-- A --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="addRadCap.html">addRadCap</a></td>
+<td>Add a total radius-at-capture variable to a data frame that contains one-fish-per-line increments data.</td></tr>
+<tr><td width="25%"><a href="addZeroCatch.html">addZeroCatch</a></td>
+<td>Adds zero catch values for sampling events and species that were not captured.</td></tr>
+<tr><td width="25%"><a href="ageComp.html">ageComp</a></td>
+<td>Results for comparing paired sets of ages.</td></tr>
+<tr><td width="25%"><a href="ageKey.html">ageKey</a></td>
+<td>Applies an age-length key to individuals in a length-sample.</td></tr>
+<tr><td width="25%"><a href="catchCurve.html">anova.catchCurve</a></td>
+<td>Mortality estimates from the descending limb of a catch curve.</td></tr>
+<tr><td width="25%"><a href="depletion.html">anova.depletion</a></td>
+<td>Computes the Leslie or Delury population estimate from catch and effort data.</td></tr>
+<tr><td width="25%"><a href="emp.html">anova.emplm</a></td>
+<td>Computes the standard weight equation using the emperical-percentile method.</td></tr>
+<tr><td width="25%"><a href="wsValidate.html">anova.empq</a></td>
+<td>Methods to assess length-bias in a proposed standard weight equation.</td></tr>
+<tr><td width="25%"><a href="rlp.html">anova.rlp</a></td>
+<td>Computes the standard weight equation using the regression-line-percentile method.</td></tr>
+</table>
+
+<h2><a name="B">-- B --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="bcFuns.html">bcFuns</a></td>
+<td>Creates a function for a specific back-calculation model.</td></tr>
+<tr><td width="25%"><a href="binCI.html">binCI</a></td>
+<td>Confidence intervals for binomial probability of success.</td></tr>
+<tr><td width="25%"><a href="BluegillJL.html">BluegillJL</a></td>
+<td>Capture histories (2 samples) of bluegill from Jackson Lake.</td></tr>
+<tr><td width="25%"><a href="BluegillLM.html">BluegillLM</a></td>
+<td>Length and weight of bluegill from Lake Mary, MN.</td></tr>
+<tr><td width="25%"><a href="BrookTroutTH.html">BrookTroutTH</a></td>
+<td>Catch-at-age for Tobin Harbor, Isle Royale brook trout.</td></tr>
+</table>
+
+<h2><a name="C">-- C --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="capFirst.html">capFirst</a></td>
+<td>Capitalizes ONLY the first letter in a string.</td></tr>
+<tr><td width="25%"><a href="capHistConvert.html">capHistConvert</a></td>
+<td>Convert between different capture history recording types.</td></tr>
+<tr><td width="25%"><a href="capHistSum.html">capHistSum</a></td>
+<td>Summarize individual fish capture histories.</td></tr>
+<tr><td width="25%"><a href="catchCurve.html">catchCurve</a></td>
+<td>Mortality estimates from the descending limb of a catch curve.</td></tr>
+<tr><td width="25%"><a href="catchCurve.html">catchCurve.default</a></td>
+<td>Mortality estimates from the descending limb of a catch curve.</td></tr>
+<tr><td width="25%"><a href="catchCurve.html">catchCurve.formula</a></td>
+<td>Mortality estimates from the descending limb of a catch curve.</td></tr>
+<tr><td width="25%"><a href="catchCurveSim.html">catchCurveSim</a></td>
+<td>Dynamics plots to explore catch-curve models.</td></tr>
+<tr><td width="25%"><a href="walfordChapmanPlot.html">chapmanPlot</a></td>
+<td>Constructs Ford-Walford and Chapman plots for mean length-at-age data.</td></tr>
+<tr><td width="25%"><a href="walfordChapmanPlot.html">chapmanPlot.default</a></td>
+<td>Constructs Ford-Walford and Chapman plots for mean length-at-age data.</td></tr>
+<tr><td width="25%"><a href="walfordChapmanPlot.html">chapmanPlot.formula</a></td>
+<td>Constructs Ford-Walford and Chapman plots for mean length-at-age data.</td></tr>
+<tr><td width="25%"><a href="chapmanRobson.html">chapmanRobson</a></td>
+<td>Computes Chapman-Robson estimates of S and Z.</td></tr>
+<tr><td width="25%"><a href="chapmanRobson.html">chapmanRobson.default</a></td>
+<td>Computes Chapman-Robson estimates of S and Z.</td></tr>
+<tr><td width="25%"><a href="chapmanRobson.html">chapmanRobson.formula</a></td>
+<td>Computes Chapman-Robson estimates of S and Z.</td></tr>
+<tr><td width="25%"><a href="chooseColors.html">chooseColors</a></td>
+<td>Create a list of colors from among a variety of color palettes.</td></tr>
+<tr><td width="25%"><a href="CodNorwegian.html">CodNorwegian</a></td>
+<td>Stock and recruitment data for Norwegian cod,1937-1960.</td></tr>
+<tr><td width="25%"><a href="catchCurve.html">coef.catchCurve</a></td>
+<td>Mortality estimates from the descending limb of a catch curve.</td></tr>
+<tr><td width="25%"><a href="depletion.html">coef.depletion</a></td>
+<td>Computes the Leslie or Delury population estimate from catch and effort data.</td></tr>
+<tr><td width="25%"><a href="emp.html">coef.emp</a></td>
+<td>Computes the standard weight equation using the emperical-percentile method.</td></tr>
+<tr><td width="25%"><a href="wsValidate.html">coef.empq</a></td>
+<td>Methods to assess length-bias in a proposed standard weight equation.</td></tr>
+<tr><td width="25%"><a href="FroeseWs.html">coef.FroeseWs</a></td>
+<td>Computes the standard weight equation using the methods described in Froese (2006).</td></tr>
+<tr><td width="25%"><a href="rlp.html">coef.rlp</a></td>
+<td>Computes the standard weight equation using the regression-line-percentile method.</td></tr>
+<tr><td width="25%"><a href="cohortSim.html">cohortSim</a></td>
+<td>Dynamics plots to explore numbers in a cohort over time.</td></tr>
+<tr><td width="25%"><a href="bootCase.html">confint.bootCase</a></td>
+<td>Associated S3 methods for bootCase from car.</td></tr>
+<tr><td width="25%"><a href="catchCurve.html">confint.catchCurve</a></td>
+<td>Mortality estimates from the descending limb of a catch curve.</td></tr>
+<tr><td width="25%"><a href="chapmanRobson.html">confint.chapmanRobson</a></td>
+<td>Computes Chapman-Robson estimates of S and Z.</td></tr>
+<tr><td width="25%"><a href="depletion.html">confint.depletion</a></td>
+<td>Computes the Leslie or Delury population estimate from catch and effort data.</td></tr>
+<tr><td width="25%"><a href="mrClosed.html">confint.mrClosed</a></td>
+<td>Estimate initial population size for single or multiple census mark-recapture data.</td></tr>
+<tr><td width="25%"><a href="mrOpen.html">confint.mrOpen</a></td>
+<td>Estimate initial population size for multiple census mark-recapture data from an open population.</td></tr>
+<tr><td width="25%"><a href="confint.nlsBoot.html">confint.nlsBoot</a></td>
+<td>Construct a confidence interval from nlsBoot results.</td></tr>
+<tr><td width="25%"><a href="confint.nlsBoot.html">confint.nlsboot</a></td>
+<td>Construct a confidence interval from nlsBoot results.</td></tr>
+<tr><td width="25%"><a href="removal.html">confint.removal</a></td>
+<td>Computes population estimates for k-, 3-, or 2-pass removal data.</td></tr>
+<tr><td width="25%"><a href="CutthroatAL.html">CutthroatAL</a></td>
+<td>Capture histories (3 samples) of cutthroat trout from Auke Lake.</td></tr>
+</table>
+
+<h2><a name="D">-- D --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="depletion.html">depletion</a></td>
+<td>Computes the Leslie or Delury population estimate from catch and effort data.</td></tr>
+<tr><td width="25%"><a href="dietOverlap.html">dietOverlap</a></td>
+<td>Computes indices of diet overlap between two species.</td></tr>
+</table>
+
+<h2><a name="E">-- E --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="Ecoli.html">Ecoli</a></td>
+<td>Population growth of Escherchia coli.</td></tr>
+<tr><td width="25%"><a href="emp.html">emp</a></td>
+<td>Computes the standard weight equation using the emperical-percentile method.</td></tr>
+</table>
+
+<h2><a name="F">-- F --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="fact2num.html">fact2num</a></td>
+<td>Converts "numeric" factor levels to numeric values.</td></tr>
+<tr><td width="25%"><a href="fishR.html">fishR</a></td>
+<td>Opens web pages associated with the fishR site.</td></tr>
+<tr><td width="25%"><a href="fitPlot.html">fitPlot</a></td>
+<td>Fitted model plot for an lm, glm, or nls object.</td></tr>
+<tr><td width="25%"><a href="emp.html">fitPlot.emplm</a></td>
+<td>Computes the standard weight equation using the emperical-percentile method.</td></tr>
+<tr><td width="25%"><a href="wsValidate.html">fitPlot.empq</a></td>
+<td>Methods to assess length-bias in a proposed standard weight equation.</td></tr>
+<tr><td width="25%"><a href="emp.html">fitPlot.emprq</a></td>
+<td>Computes the standard weight equation using the emperical-percentile method.</td></tr>
+<tr><td width="25%"><a href="fitPlot.html">fitPlot.glm</a></td>
+<td>Fitted model plot for an lm, glm, or nls object.</td></tr>
+<tr><td width="25%"><a href="fitPlot.html">fitPlot.IVR</a></td>
+<td>Fitted model plot for an lm, glm, or nls object.</td></tr>
+<tr><td width="25%"><a href="fitPlot.html">fitPlot.lm</a></td>
+<td>Fitted model plot for an lm, glm, or nls object.</td></tr>
+<tr><td width="25%"><a href="fitPlot.html">fitPlot.logreg</a></td>
+<td>Fitted model plot for an lm, glm, or nls object.</td></tr>
+<tr><td width="25%"><a href="fitPlot.html">fitPlot.nls</a></td>
+<td>Fitted model plot for an lm, glm, or nls object.</td></tr>
+<tr><td width="25%"><a href="fitPlot.html">fitPlot.ONEWAY</a></td>
+<td>Fitted model plot for an lm, glm, or nls object.</td></tr>
+<tr><td width="25%"><a href="fitPlot.html">fitPlot.POLY</a></td>
+<td>Fitted model plot for an lm, glm, or nls object.</td></tr>
+<tr><td width="25%"><a href="rlp.html">fitPlot.rlp</a></td>
+<td>Computes the standard weight equation using the regression-line-percentile method.</td></tr>
+<tr><td width="25%"><a href="fitPlot.html">fitPlot.SLR</a></td>
+<td>Fitted model plot for an lm, glm, or nls object.</td></tr>
+<tr><td width="25%"><a href="fitPlot.html">fitPlot.TWOWAY</a></td>
+<td>Fitted model plot for an lm, glm, or nls object.</td></tr>
+<tr><td width="25%"><a href="FroeseWs.html">FroeseWs</a></td>
+<td>Computes the standard weight equation using the methods described in Froese (2006).</td></tr>
+<tr><td width="25%"><a href="FSA.html">FSA</a></td>
+<td>Fisheries stock assessment methods and data.</td></tr>
+<tr><td width="25%"><a href="fsaNews.html">FSANews</a></td>
+<td>Read news and changes in the 'FSA' package.</td></tr>
+<tr><td width="25%"><a href="fsaNews.html">fsaNews</a></td>
+<td>Read news and changes in the 'FSA' package.</td></tr>
+</table>
+
+<h2><a name="G">-- G --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="Garvey1.html">Garvey1</a></td>
+<td>Number of Ameletus and Leuctra per benthic core in pools in Ohio headwater streams.</td></tr>
+<tr><td width="25%"><a href="Garvey4a.html">Garvey4a</a></td>
+<td>Desity of shad captured in offshore zones and sunfish seined in inshore areas of four Ohio reservoirs across 22 years.</td></tr>
+<tr><td width="25%"><a href="gConvert.html">gConvert</a></td>
+<td>Converts between growth measurement data types.</td></tr>
+<tr><td width="25%"><a href="gReshape.html">gReshape</a></td>
+<td>Reshapes a one-fish-per-line data frame to a one-measurement-per-line data frame.</td></tr>
+<tr><td width="25%"><a href="growthModels.html">growthModels</a></td>
+<td>Show the growth model formulas implemented in the FSA package.</td></tr>
+<tr><td width="25%"><a href="growthModelSim.html">growthModelSim</a></td>
+<td>Dynamics plots to explore typical fisheries growth models.</td></tr>
+<tr><td width="25%"><a href="growthRadPlot.html">growthRadPlot</a></td>
+<td>Constructs skeleton plots of radial or proportional radial measurements made at annuli on fish calcified structures.</td></tr>
+</table>
+
+<h2><a name="H">-- H --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="bootCase.html">hist.bootCase</a></td>
+<td>Associated S3 methods for bootCase from car.</td></tr>
+<tr><td width="25%"><a href="hist.formula.html">hist.formula</a></td>
+<td>Creates separate histograms by levels.</td></tr>
+<tr><td width="25%"><a href="histStack.html">histStack</a></td>
+<td>Stacked histogram.</td></tr>
+<tr><td width="25%"><a href="histStack.html">histStack.default</a></td>
+<td>Stacked histogram.</td></tr>
+<tr><td width="25%"><a href="histStack.html">histStack.formula</a></td>
+<td>Stacked histogram.</td></tr>
+<tr><td width="25%"><a href="hoCoef.html">hoCoef</a></td>
+<td>Performs a hypothesis test that a parameter in a linear model is equal to some specific value.</td></tr>
+<tr><td width="25%"><a href="htest.html">htest</a></td>
+<td>Constructs a p-value for a bootstrapped hypothesis test using nlsBoot.</td></tr>
+<tr><td width="25%"><a href="bootCase.html">htest.bootCase</a></td>
+<td>Associated S3 methods for bootCase from car.</td></tr>
+<tr><td width="25%"><a href="htest.html">htest.nlsBoot</a></td>
+<td>Constructs a p-value for a bootstrapped hypothesis test using nlsBoot.</td></tr>
+<tr><td width="25%"><a href="hyperCI.html">hyperCI</a></td>
+<td>Confidence interval for population size (N) in hypergeometric distribution.</td></tr>
+</table>
+
+<h2><a name="K">-- K --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="ks2d1.html">ks2d1</a></td>
+<td>Computes the D test statistic for the one-sample two-dimensional Kolmogrov-Smirnov test.</td></tr>
+<tr><td width="25%"><a href="ks2d1p.html">ks2d1p</a></td>
+<td>A permutation test to compute a p-value for the D test statistic for the one-sample two-dimensional Kolmogrov-Smirnov test.</td></tr>
+<tr><td width="25%"><a href="ks2d2.html">ks2d2</a></td>
+<td>Computes the D test statistic for the two-sample two-dimensional Kolmogrov-Smirnov test.</td></tr>
+<tr><td width="25%"><a href="ks2d2p.html">ks2d2p</a></td>
+<td>A permutation test to compute a p-value for the D test statistic for the two-sample two-dimensional Kolmogrov-Smirnov test.</td></tr>
+<tr><td width="25%"><a href="KS2D_NR.html">KS2D_NR</a></td>
+<td>Data from Figure 14.7.1 of Numerical Recipes</td></tr>
+<tr><td width="25%"><a href="ksTest.html">ksTest</a></td>
+<td>Kolmogorov-Smirnov Tests.</td></tr>
+<tr><td width="25%"><a href="ksTest.html">ksTest.default</a></td>
+<td>Kolmogorov-Smirnov Tests.</td></tr>
+<tr><td width="25%"><a href="ksTest.html">ksTest.formula</a></td>
+<td>Kolmogorov-Smirnov Tests.</td></tr>
+</table>
+
+<h2><a name="L">-- L --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="lagratio.html">lagratio</a></td>
+<td>Ratio of lagged observations.</td></tr>
+<tr><td width="25%"><a href="lencat.html">lencat</a></td>
+<td>Constructs length class/category variable.</td></tr>
+<tr><td width="25%"><a href="lenFreqExpand.html">lenFreqExpand</a></td>
+<td>Expands a length frequency based on a subsample.</td></tr>
+<tr><td width="25%"><a href="leslieSim.html">leslieSim</a></td>
+<td>Dynamic plots to explore the Leslie depletion model.</td></tr>
+<tr><td width="25%"><a href="LMBassWs.html">LMBassWs</a></td>
+<td>Length-weight regression results for computing Ws for largemouth bass.</td></tr>
+<tr><td width="25%"><a href="lwModelSim.html">lwModelSim</a></td>
+<td>Dynamics plots to explore length-weight power function models.</td></tr>
+<tr><td width="25%"><a href="lwPredsComp.html">lwPredsComp</a></td>
+<td>Constructs plots of predicted weights at given lengths among different groups.</td></tr>
+</table>
+
+<h2><a name="M">-- M --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="Mirex.html">Mirex</a></td>
+<td>Mirex concentration, weight, capture year, and species of Lake Ontario salmon.</td></tr>
+<tr><td width="25%"><a href="mrClosed.html">mrClosed</a></td>
+<td>Estimate initial population size for single or multiple census mark-recapture data.</td></tr>
+<tr><td width="25%"><a href="mrClosed1Sim.html">mrClosed1Sim</a></td>
+<td>Dynamics plots to explore single-census mark-recapture models.</td></tr>
+<tr><td width="25%"><a href="mrOpen.html">mrOpen</a></td>
+<td>Estimate initial population size for multiple census mark-recapture data from an open population.</td></tr>
+</table>
+
+<h2><a name="O">-- O --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="odd.html">odd</a></td>
+<td>Determines if a number is odd.</td></tr>
+</table>
+
+<h2><a name="P">-- P --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="paletteChoices.html">paletteChoices</a></td>
+<td>Provides a vector of possible color palettes.</td></tr>
+<tr><td width="25%"><a href="PikeNY.html">PikeNY</a></td>
+<td>Summarized multiple mark-recapture data for all northern pike from Buckthorn Marsh.</td></tr>
+<tr><td width="25%"><a href="PikeNYPartial1.html">PikeNYPartial1</a></td>
+<td>Capture histories (4 samples), in capture history format, of a subset of northern pike from Buckthorn Marsh.</td></tr>
+<tr><td width="25%"><a href="ageComp.html">plot.ageComp</a></td>
+<td>Results for comparing paired sets of ages.</td></tr>
+<tr><td width="25%"><a href="bootCase.html">plot.bootCase</a></td>
+<td>Associated S3 methods for bootCase from car.</td></tr>
+<tr><td width="25%"><a href="catchCurve.html">plot.catchCurve</a></td>
+<td>Mortality estimates from the descending limb of a catch curve.</td></tr>
+<tr><td width="25%"><a href="chapmanRobson.html">plot.chapmanRobson</a></td>
+<td>Computes Chapman-Robson estimates of S and Z.</td></tr>
+<tr><td width="25%"><a href="depletion.html">plot.depletion</a></td>
+<td>Computes the Leslie or Delury population estimate from catch and effort data.</td></tr>
+<tr><td width="25%"><a href="emp.html">plot.emplm</a></td>
+<td>Computes the standard weight equation using the emperical-percentile method.</td></tr>
+<tr><td width="25%"><a href="wsValidate.html">plot.empq</a></td>
+<td>Methods to assess length-bias in a proposed standard weight equation.</td></tr>
+<tr><td width="25%"><a href="FroeseWs.html">plot.FroeseWs</a></td>
+<td>Computes the standard weight equation using the methods described in Froese (2006).</td></tr>
+<tr><td width="25%"><a href="ks2d1.html">plot.ks2d1</a></td>
+<td>Computes the D test statistic for the one-sample two-dimensional Kolmogrov-Smirnov test.</td></tr>
+<tr><td width="25%"><a href="ks2d1p.html">plot.ks2d1p</a></td>
+<td>A permutation test to compute a p-value for the D test statistic for the one-sample two-dimensional Kolmogrov-Smirnov test.</td></tr>
+<tr><td width="25%"><a href="ks2d2.html">plot.ks2d2</a></td>
+<td>Computes the D test statistic for the two-sample two-dimensional Kolmogrov-Smirnov test.</td></tr>
+<tr><td width="25%"><a href="ks2d2p.html">plot.ks2d2p</a></td>
+<td>A permutation test to compute a p-value for the D test statistic for the two-sample two-dimensional Kolmogrov-Smirnov test.</td></tr>
+<tr><td width="25%"><a href="mrClosed.html">plot.mrClosed</a></td>
+<td>Estimate initial population size for single or multiple census mark-recapture data.</td></tr>
+<tr><td width="25%"><a href="rlp.html">plot.rlp</a></td>
+<td>Computes the standard weight equation using the regression-line-percentile method.</td></tr>
+<tr><td width="25%"><a href="plotBinResp.html">plotBinResp</a></td>
+<td>Plots a binary response variable versus a quantitative explanatory variable.</td></tr>
+<tr><td width="25%"><a href="plotBinResp.html">plotBinResp.default</a></td>
+<td>Plots a binary response variable versus a quantitative explanatory variable.</td></tr>
+<tr><td width="25%"><a href="plotBinResp.html">plotBinResp.formula</a></td>
+<td>Plots a binary response variable versus a quantitative explanatory variable.</td></tr>
+<tr><td width="25%"><a href="plotH.html">plotH</a></td>
+<td>Scatterplot with histogram-like bars.</td></tr>
+<tr><td width="25%"><a href="plotH.html">plotH.default</a></td>
+<td>Scatterplot with histogram-like bars.</td></tr>
+<tr><td width="25%"><a href="plotH.html">plotH.formula</a></td>
+<td>Scatterplot with histogram-like bars.</td></tr>
+<tr><td width="25%"><a href="poiCI.html">poiCI</a></td>
+<td>Confidence interval for Poisson rate parameter.</td></tr>
+<tr><td width="25%"><a href="popSizesPlot.html">popSizesPlot</a></td>
+<td>Constructs a plot of population size versus time from the projection of Leslie matrix.</td></tr>
+<tr><td width="25%"><a href="pos2adj.html">pos2adj</a></td>
+<td>Convert a "directional" position to "adj" values for labeling a point.</td></tr>
+<tr><td width="25%"><a href="bootCase.html">predict.bootCase</a></td>
+<td>Associated S3 methods for bootCase from car.</td></tr>
+<tr><td width="25%"><a href="emp.html">predict.emp</a></td>
+<td>Computes the standard weight equation using the emperical-percentile method.</td></tr>
+<tr><td width="25%"><a href="wsValidate.html">predict.empq</a></td>
+<td>Methods to assess length-bias in a proposed standard weight equation.</td></tr>
+<tr><td width="25%"><a href="predict.nlsBoot.html">predict.nlsBoot</a></td>
+<td>Constructs a prediction and confidence interval from nlsBoot results.</td></tr>
+<tr><td width="25%"><a href="predict.nlsBoot.html">predict.nlsboot</a></td>
+<td>Constructs a prediction and confidence interval from nlsBoot results.</td></tr>
+<tr><td width="25%"><a href="rlp.html">predict.rlp</a></td>
+<td>Computes the standard weight equation using the regression-line-percentile method.</td></tr>
+<tr><td width="25%"><a href="dietOverlap.html">print.dietOverlap</a></td>
+<td>Computes indices of diet overlap between two species.</td></tr>
+<tr><td width="25%"><a href="ks2d1.html">print.ks2d1</a></td>
+<td>Computes the D test statistic for the one-sample two-dimensional Kolmogrov-Smirnov test.</td></tr>
+<tr><td width="25%"><a href="ks2d1p.html">print.ks2d1p</a></td>
+<td>A permutation test to compute a p-value for the D test statistic for the one-sample two-dimensional Kolmogrov-Smirnov test.</td></tr>
+<tr><td width="25%"><a href="ks2d2.html">print.ks2d2</a></td>
+<td>Computes the D test statistic for the two-sample two-dimensional Kolmogrov-Smirnov test.</td></tr>
+<tr><td width="25%"><a href="ks2d2p.html">print.ks2d2p</a></td>
+<td>A permutation test to compute a p-value for the D test statistic for the two-sample two-dimensional Kolmogrov-Smirnov test.</td></tr>
+<tr><td width="25%"><a href="wsValidate.html">print.willis</a></td>
+<td>Methods to assess length-bias in a proposed standard weight equation.</td></tr>
+<tr><td width="25%"><a href="pssVal.html">psdVal</a></td>
+<td>Finds Gabelhouse five-cell length categories (for PSS) for a particular species.</td></tr>
+<tr><td width="25%"><a href="pssCalc.html">pssCalc</a></td>
+<td>Convenience function for caculating PSS-X values.</td></tr>
+<tr><td width="25%"><a href="pssDataPrep.html">pssDataPrep</a></td>
+<td>Add five-cell length categories specific to a species to an entire data frame.</td></tr>
+<tr><td width="25%"><a href="PSSlit.html">PSSlit</a></td>
+<td>Gabelhouse five-cell length categories for various species.</td></tr>
+<tr><td width="25%"><a href="pssPlot.html">pssPlot</a></td>
+<td>Length-frequency histogram with PSS-X categories highlighted.</td></tr>
+<tr><td width="25%"><a href="pssVal.html">pssVal</a></td>
+<td>Finds Gabelhouse five-cell length categories (for PSS) for a particular species.</td></tr>
+</table>
+
+<h2><a name="R">-- R --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="rcumsum.html">rcumsum</a></td>
+<td>Computes the reverse cumulative sum of a vector.</td></tr>
+<tr><td width="25%"><a href="recodeSpecies.html">recodeSpecies</a></td>
+<td>Recodes species names according to user choice or to have capitalization only for the first word in the name.</td></tr>
+<tr><td width="25%"><a href="removal.html">removal</a></td>
+<td>Computes population estimates for k-, 3-, or 2-pass removal data.</td></tr>
+<tr><td width="25%"><a href="residPlot.html">residPlot</a></td>
+<td>Construct a residual plot from lm or nls objects.</td></tr>
+<tr><td width="25%"><a href="emp.html">residPlot.emplm</a></td>
+<td>Computes the standard weight equation using the emperical-percentile method.</td></tr>
+<tr><td width="25%"><a href="residPlot.html">residPlot.IVR</a></td>
+<td>Construct a residual plot from lm or nls objects.</td></tr>
+<tr><td width="25%"><a href="residPlot.html">residPlot.lm</a></td>
+<td>Construct a residual plot from lm or nls objects.</td></tr>
+<tr><td width="25%"><a href="residPlot.html">residPlot.nls</a></td>
+<td>Construct a residual plot from lm or nls objects.</td></tr>
+<tr><td width="25%"><a href="residPlot.html">residPlot.ONEWAY</a></td>
+<td>Construct a residual plot from lm or nls objects.</td></tr>
+<tr><td width="25%"><a href="residPlot.html">residPlot.POLY</a></td>
+<td>Construct a residual plot from lm or nls objects.</td></tr>
+<tr><td width="25%"><a href="rlp.html">residPlot.rlp</a></td>
+<td>Computes the standard weight equation using the regression-line-percentile method.</td></tr>
+<tr><td width="25%"><a href="residPlot.html">residPlot.SLR</a></td>
+<td>Construct a residual plot from lm or nls objects.</td></tr>
+<tr><td width="25%"><a href="residPlot.html">residPlot.TWOWAY</a></td>
+<td>Construct a residual plot from lm or nls objects.</td></tr>
+<tr><td width="25%"><a href="residPlot.html">residualPlot</a></td>
+<td>Construct a residual plot from lm or nls objects.</td></tr>
+<tr><td width="25%"><a href="rlp.html">rlp</a></td>
+<td>Computes the standard weight equation using the regression-line-percentile method.</td></tr>
+<tr><td width="25%"><a href="pssVal.html">rsdVal</a></td>
+<td>Finds Gabelhouse five-cell length categories (for PSS) for a particular species.</td></tr>
+<tr><td width="25%"><a href="RuffeWs.html">RuffeWs</a></td>
+<td>Raw Length-weight data that can be used to compute the Ws for ruffe.</td></tr>
+</table>
+
+<h2><a name="S">-- S --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="simAgeBias.html">simAgeBias</a></td>
+<td>Simulate an age bias and simulate the ages of fish using the age bias.</td></tr>
+<tr><td width="25%"><a href="simAges.html">simAges</a></td>
+<td>Simulate an age structure.</td></tr>
+<tr><td width="25%"><a href="simAgeBias.html">simApplyAgeBias</a></td>
+<td>Simulate an age bias and simulate the ages of fish using the age bias.</td></tr>
+<tr><td width="25%"><a href="simLenFromAge.html">simLenFromAge</a></td>
+<td>Simulate fish length from given ages.</td></tr>
+<tr><td width="25%"><a href="simLenSelect.html">simLenSelectM</a></td>
+<td>Simulate sampling fish based on length selectivity.</td></tr>
+<tr><td width="25%"><a href="simLenSelect.html">simLenSelectP</a></td>
+<td>Simulate sampling fish based on length selectivity.</td></tr>
+<tr><td width="25%"><a href="SMBassLS.html">SMBassLS</a></td>
+<td>Catch-effort data for Little Silver Lake smallmouth bass.</td></tr>
+<tr><td width="25%"><a href="SMBassWB.html">SMBassWB</a></td>
+<td>Growth increment data for West Bearskin Lake smallmouth bass.</td></tr>
+<tr><td width="25%"><a href="SpotVA1.html">SpotVA1</a></td>
+<td>Age and length of spot.</td></tr>
+<tr><td width="25%"><a href="srCobWeb.html">srCobWeb</a></td>
+<td>Plots typical fisheries stock-recruitment models with cobwebbing traces.</td></tr>
+<tr><td width="25%"><a href="srFuns.html">srFuns</a></td>
+<td>Creates a function for a specific stock-recruitment model parameterization.</td></tr>
+<tr><td width="25%"><a href="srModels.html">srModels</a></td>
+<td>Show the stock-recruitment model formulas implemented in FSA.</td></tr>
+<tr><td width="25%"><a href="srSim.html">srSim</a></td>
+<td>Dynamic plots to explore typical fisheries stock-recruitment models.</td></tr>
+<tr><td width="25%"><a href="srStarts.html">srStarts</a></td>
+<td>Finds reasonable starting values for the parameters in a specific stock-recruitment model parameterization.</td></tr>
+<tr><td width="25%"><a href="srStarts.html">srStarts.default</a></td>
+<td>Finds reasonable starting values for the parameters in a specific stock-recruitment model parameterization.</td></tr>
+<tr><td width="25%"><a href="srStarts.html">srStarts.formula</a></td>
+<td>Finds reasonable starting values for the parameters in a specific stock-recruitment model parameterization.</td></tr>
+<tr><td width="25%"><a href="StripedBass1.html">StripedBass1</a></td>
+<td>Age of striped bass assigned from scales and otoliths.</td></tr>
+<tr><td width="25%"><a href="Subset.html">Subset</a></td>
+<td>Subsets a data frame and drops the unused levels.</td></tr>
+<tr><td width="25%"><a href="Subset.html">Subset.data.frame</a></td>
+<td>Subsets a data frame and drops the unused levels.</td></tr>
+<tr><td width="25%"><a href="Summarize.html">Summarize</a></td>
+<td>Summary statistics for a numeric or factor variable.</td></tr>
+<tr><td width="25%"><a href="Summarize.html">Summarize.default</a></td>
+<td>Summary statistics for a numeric or factor variable.</td></tr>
+<tr><td width="25%"><a href="Summarize.html">Summarize.formula</a></td>
+<td>Summary statistics for a numeric or factor variable.</td></tr>
+<tr><td width="25%"><a href="ageComp.html">summary.ageComp</a></td>
+<td>Results for comparing paired sets of ages.</td></tr>
+<tr><td width="25%"><a href="catchCurve.html">summary.catchCurve</a></td>
+<td>Mortality estimates from the descending limb of a catch curve.</td></tr>
+<tr><td width="25%"><a href="chapmanRobson.html">summary.chapmanRobson</a></td>
+<td>Computes Chapman-Robson estimates of S and Z.</td></tr>
+<tr><td width="25%"><a href="depletion.html">summary.depletion</a></td>
+<td>Computes the Leslie or Delury population estimate from catch and effort data.</td></tr>
+<tr><td width="25%"><a href="dietOverlap.html">summary.dietOverlap</a></td>
+<td>Computes indices of diet overlap between two species.</td></tr>
+<tr><td width="25%"><a href="emp.html">summary.emp</a></td>
+<td>Computes the standard weight equation using the emperical-percentile method.</td></tr>
+<tr><td width="25%"><a href="wsValidate.html">summary.empq</a></td>
+<td>Methods to assess length-bias in a proposed standard weight equation.</td></tr>
+<tr><td width="25%"><a href="mrClosed.html">summary.mrClosed</a></td>
+<td>Estimate initial population size for single or multiple census mark-recapture data.</td></tr>
+<tr><td width="25%"><a href="mrOpen.html">summary.mrOpen</a></td>
+<td>Estimate initial population size for multiple census mark-recapture data from an open population.</td></tr>
+<tr><td width="25%"><a href="removal.html">summary.removal</a></td>
+<td>Computes population estimates for k-, 3-, or 2-pass removal data.</td></tr>
+<tr><td width="25%"><a href="rlp.html">summary.rlp</a></td>
+<td>Computes the standard weight equation using the regression-line-percentile method.</td></tr>
+<tr><td width="25%"><a href="wsValidate.html">summary.willis</a></td>
+<td>Methods to assess length-bias in a proposed standard weight equation.</td></tr>
+<tr><td width="25%"><a href="swvUtil.html">swvANOVA</a></td>
+<td>Specific utilities for use in a Sweave/knitr document.</td></tr>
+<tr><td width="25%"><a href="swvUtil.html">swvCode</a></td>
+<td>Specific utilities for use in a Sweave/knitr document.</td></tr>
+<tr><td width="25%"><a href="swvUtil.html">swvCounts</a></td>
+<td>Specific utilities for use in a Sweave/knitr document.</td></tr>
+<tr><td width="25%"><a href="swvUtil.html">swvFinish</a></td>
+<td>Specific utilities for use in a Sweave/knitr document.</td></tr>
+<tr><td width="25%"><a href="swvUtil.html">swvGLHT</a></td>
+<td>Specific utilities for use in a Sweave/knitr document.</td></tr>
+<tr><td width="25%"><a href="swvUtil.html">swvHtest</a></td>
+<td>Specific utilities for use in a Sweave/knitr document.</td></tr>
+<tr><td width="25%"><a href="swvUtil.html">swvPvalue</a></td>
+<td>Specific utilities for use in a Sweave/knitr document.</td></tr>
+<tr><td width="25%"><a href="swvUtil.html">swvREG</a></td>
+<td>Specific utilities for use in a Sweave/knitr document.</td></tr>
+</table>
+
+<h2><a name="T">-- T --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="tictactoe.html">tictactoe</a></td>
+<td>Constructs the base tic-tac-toe graph for presenting predator-prey PSS values.</td></tr>
+<tr><td width="25%"><a href="tictactoeAdd.html">tictactoeAdd</a></td>
+<td>Adds point and confidence intervals for observed preator-prey PSS to tic-tac-toe graph.</td></tr>
+<tr><td width="25%"><a href="TroutDietSL.html">TroutDietSL</a></td>
+<td>Size and diet data for lake and bull trout from Swan Lake, Montana.</td></tr>
+<tr><td width="25%"><a href="typeoflm.html">typeoflm</a></td>
+<td>Identify specific model type from lm object.</td></tr>
+</table>
+
+<h2><a name="V">-- V --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="vbComp.html">vbComp</a></td>
+<td>Evaluates and plots the traditional von Bertalanffy growth model for several sets of parameter choices.</td></tr>
+<tr><td width="25%"><a href="vbDataGen.html">vbDataGen</a></td>
+<td>Randomly create a von Bertalanffy data set.</td></tr>
+<tr><td width="25%"><a href="vbFuns.html">vbFuns</a></td>
+<td>Creates a function for a specific von Bertalanffy parameterization.</td></tr>
+<tr><td width="25%"><a href="VBGMlit.html">VBGMlit</a></td>
+<td>Von Bertalanffy parameter estimates from the literature.</td></tr>
+<tr><td width="25%"><a href="growthModels.html">vbModels</a></td>
+<td>Show the growth model formulas implemented in the FSA package.</td></tr>
+<tr><td width="25%"><a href="vbStarts.html">vbStarts</a></td>
+<td>Finds reasonable starting values for the parameters in a specific von Bertalanffy model parameterization.</td></tr>
+<tr><td width="25%"><a href="vbStarts.html">vbStarts.default</a></td>
+<td>Finds reasonable starting values for the parameters in a specific von Bertalanffy model parameterization.</td></tr>
+<tr><td width="25%"><a href="vbStarts.html">vbStarts.formula</a></td>
+<td>Finds reasonable starting values for the parameters in a specific von Bertalanffy model parameterization.</td></tr>
+<tr><td width="25%"><a href="view.html">view</a></td>
+<td>Shows a random selection of rows from a data frame or matrix.</td></tr>
+</table>
+
+<h2><a name="W">-- W --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="walfordChapmanPlot.html">walfordPlot</a></td>
+<td>Constructs Ford-Walford and Chapman plots for mean length-at-age data.</td></tr>
+<tr><td width="25%"><a href="walfordChapmanPlot.html">walfordPlot.default</a></td>
+<td>Constructs Ford-Walford and Chapman plots for mean length-at-age data.</td></tr>
+<tr><td width="25%"><a href="walfordChapmanPlot.html">walfordPlot.formula</a></td>
+<td>Constructs Ford-Walford and Chapman plots for mean length-at-age data.</td></tr>
+<tr><td width="25%"><a href="WalleyeGerowLW.html">WalleyeGerowLW</a></td>
+<td>Raw length-weight data that can be used to compute the Ws for walleye as performed in Gerow (2005).</td></tr>
+<tr><td width="25%"><a href="WR79.html">WR79</a></td>
+<td>Age and length for a hypothetical sample from Westerheim and Ricker (1979).</td></tr>
+<tr><td width="25%"><a href="wrAdd.html">wrAdd</a></td>
+<td>Appends standard weight and relative weight variables to a data frame.</td></tr>
+<tr><td width="25%"><a href="wrDataPrep.html">wrDataPrep</a></td>
+<td>Add standard and relative weights specific to a species to an entire data frame.</td></tr>
+<tr><td width="25%"><a href="WSlit.html">WSlit</a></td>
+<td>Standard weight equations for various species.</td></tr>
+<tr><td width="25%"><a href="wsVal.html">wsVal</a></td>
+<td>Finds standard weight equation coefficients for a particular species.</td></tr>
+<tr><td width="25%"><a href="wsValidate.html">wsValidate</a></td>
+<td>Methods to assess length-bias in a proposed standard weight equation.</td></tr>
+</table>
+</body></html>
