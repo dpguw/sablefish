@@ -84,10 +84,11 @@ surveyLengthNamesFxn<-function(df)
   return(df)  
 }
 #################################################################
-maxLengthFxn <- function(df,maxLength)
+maxLengthFxn <- function(df,maxLength,sex)
 {
   temp<- df$length
-  temp[which(temp>maxLength)] <- maxLength 
+  tempWhich<-which(temp>maxLength & df$sex==sex)
+  if(length(tempWhich)>0){temp[tempWhich] <- maxLength }
   return(transform(df,lengthTrunc=temp))
 }
 ##################################################################
@@ -432,7 +433,7 @@ AlkFxn<-function(year,
      {
        dimnames(ageKey)[[1]]=femalelengths[[index]]
      }
-     ageDist <- ageKey(ageKey,rr,"lengthBin","age")
+     ageDist <- ageKey(key=ageKey,formula=~lengthBin,data=rr,type="CR")
      print(paste("sex = ",sexType," year= ",year))
      return(ageDist)
 }
@@ -587,7 +588,7 @@ surveyLengthCountsFxn<-function(df,year,sex)
 }
 
 ###################################################################
-alkYearsNoAgeDataListFxn <- function()
+alkYearsNoAgeDataListFxnDeprecated <- function()
 {
   alkYearsNoAgeData<-vector('list',length=length(matchNoAgeYearVector))
   
@@ -610,6 +611,33 @@ alkYearsNoAgeDataListFxn <- function()
   return(alkYearsNoAgeData)
 }    
 ##################################################################
+alkYearsNoAgeDataListFxn <- function(yearNoAgeData,yearAgeData,sex)
+{
+  aa<- as.character(yearAgeData)
+  bb <- as.character(yearNoAgeData)
+  if(sex==1)
+  {
+    alkList <- maleALKyearsAgeDataTable
+    surveyLengthCountsList<- maleSurveyLengthCounts
+  }
+  if(sex==2)
+  {
+    alkList <- femaleALKyearsAgeDataTable
+    surveyLengthCountsList <- femaleSurveyLengthCounts
+  }
+  
+  x <-  matrix(as.vector(alkList[[aa]]),
+               byrow=F,ncol=19)
+  fi1 <- as.vector(unname(surveyLengthCountsList[[aa]]))
+  fi2 <-  as.vector(unname(surveyLengthCountsList[[bb]]))
+  
+  alkYearsNoAgeData <- kimura_chikuni(x,fi1,fi2)@alk
+  dimnames(alkYearsNoAgeData)[[1]] <-  lengthBinVec[1:28]-1
+  dimnames(alkYearsNoAgeData)[[2]] <-  2:20
+  
+  return(alkYearsNoAgeData)
+}
+#################################################################
 releasesForADMB<-function(year,sexType,relarea,releasedf)
   {
   

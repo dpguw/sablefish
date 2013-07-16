@@ -1,0 +1,20 @@
+competitioncurve        Growth kinetics of two competitive bacterial
+                        flora
+competitionmodels       Competition models for simultaneous growth of
+                        two bacterial flora
+growthcurve1            Bacterial kinetics data sets
+growthmodels            Bacterial growth models
+michaelismodels         Michaelis-Menten model and derived equations to
+                        model competitive and non-competitive
+                        inhibition
+nlsBoot                 Bootstrap resampling
+nlsConfRegions          Confidence regions
+nlsContourRSS           Surface contour of RSS
+nlsJack                 Jackknife resampling
+nlsResiduals            NLS residuals
+nlstools                Nonlinear least squares fit
+ross                    Secondary growth curves
+secondary               Secondary growth models
+survivalcurve1          Bacterial survival data sets
+survivalmodels          Bacterial survival models
+vmkm                    Michaelis Menten data sets

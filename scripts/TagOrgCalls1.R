@@ -1,3 +1,20 @@
+############################################################
+matchNoAgeYearList<-list(
+  "1983"=1985,
+  "1984"=1985,
+  "1986"=c(1985,1987),
+  "1988"=c(1987,1989),
+  "1990"=c(1989,1991),
+  "1992"=c(1991,1993),
+  "1994"=1993)
+matchNoAgeYearVector <-c(
+  "1983"=1985,
+  "1984"=1985,
+  "1986"=1985,
+  "1988"=1987,
+  "1990"=1989,
+  "1992"=1991,
+  "1994"=1993)
 ####################################################
 regionsList<- regionsListFxn()
 ####################################################
@@ -6,7 +23,8 @@ surveyLength <- surveyLengthReadInFxn(path=sableLengthDataPath,
 #####################################################
 surveyLength <- surveyLengthNamesFxn(surveyLength)
 #####################################################
-surveyLength <- maxLengthFxn(surveyLength,maxLength=100)
+surveyLength <- maxLengthFxn(surveyLength,maxLength=79,sex=1)
+surveyLength <- maxLengthFxn(surveyLength,maxLength=89,sex=2)
 ##########################################################
 surveyLength<- surveyRegionFxn(df=surveyLength,
                                regionvec=regionVec,
@@ -85,9 +103,9 @@ ageMat<-ageTablesReadInFxn(years8710file=sableAgesMainTablePath,
 ##############################################################
 ageMat$age[which(ageMat$age>20)]<-20
 ##############################################################
-ageMat$length[which(ageMat$sex==1 & ageMat$length>=79)]=79
-ageMat$lengthTrunc=sapply(ageMat$length,function(x) min(x,100))
-releases$lengthTrunc[which(releases$sex==1 & releases$lengthTrunc>=79)]=79
+ageMat <- maxLengthFxn(ageMat,maxLength=79,sex=1)
+ageMat <- maxLengthFxn(ageMat,maxLength=89,sex=2)
+releases <- maxLengthFxn(releases,maxLength=89,sex=2)
 ##############################################################
 ageMat<-lengthBinFxn(ageseq=lengthBinVec,
                   df=ageMat,
@@ -95,29 +113,29 @@ ageMat<-lengthBinFxn(ageseq=lengthBinVec,
 
 
 ##############################################################
-releases<-ageBinFxn(ageseq=lengthBinVec,
+releases<-lengthBinFxn(ageseq=lengthBinVec,
                   df=releases,
                   dflength=releases$lengthTrunc)
 ##############################################################
-releasesWithAgesYearsNoAgeData <- alkWrapperFxn(tagyearsnoagedata=tagYearsNoAgeData,
-                                     tagyearsall=tagYears,
-                                     lengthsfemales=female.lengths,
-                                     lengthsmales=male.lengths,
-                                     releasedf=releases,
-                                     filelocmale=maleALKpath,
-                                     filelocfemale=femaleALKpath,
-                                     agefxn=AlkFxn)
-dim(releasesWithAgesYearsNoAgeData)
+#releasesWithAgesYearsNoAgeData <- alkWrapperFxn(tagyearsnoagedata=tagYearsNoAgeData,
+#                                     tagyearsall=tagYears,
+#                                     lengthsfemales=female.lengths,
+#                                     lengthsmales=male.lengths,
+#                                     releasedf=releases,
+#                                     filelocmale=maleALKpath,
+#                                     filelocfemale=femaleALKpath,
+#                                     agefxn=AlkFxn)
+#dim(releasesWithAgesYearsNoAgeData)
 #####################################################################
-releasesWithAgesYearsYesAgeData <- alkYearsAgeDataWrapperFxn(
-                                       alkfxn=alkYearsAgeDataFxn,
-                                       yearvec=rep(tagYearsYesAgeData,2),
-                                       sexvec=rep(1:2,each=length(tagYearsYesAgeData)),
-                                       agemat=ageMat,
-                                       releasesdf=releases)
+#releasesWithAgesYearsYesAgeData <- alkYearsAgeDataWrapperFxn(
+#                                       alkfxn=alkYearsAgeDataFxn,
+#                                       yearvec=rep(tagYearsYesAgeData,2),
+#                                       sexvec=rep(1:2,each=length(tagYearsYesAgeData)),
+#                                       agemat=ageMat,
+#                                       releasesdf=releases)
 #############################################################
-releases <- rbind(releasesWithAgesYearsNoAgeData,
-                  releasesWithAgesYearsYesAgeData)
+#releases <- rbind(releasesWithAgesYearsNoAgeData,
+#                  releasesWithAgesYearsYesAgeData)
 ############################################################
 maleSurveyCountsByLength <- mapply(surveyLengthCountFxn,
                                  year=1983:2009,
@@ -129,25 +147,9 @@ femaleSurveyCountsByLength <- mapply(surveyLengthCountFxn,
                                      MoreArgs=
                                      list(sex=2,df=surveyLength))
 names(femaleSurveyCountsByLength) <- 1983:2009
-############################################################
-matchNoAgeYearList<-list(
-                        "1983"=1985,
-                        "1984"=1985,
-                        "1986"=c(1985,1987),
-                        "1988"=c(1987,1989),
-                        "1990"=c(1989,1991),
-                        "1992"=c(1991,1993),
-                        "1994"=1993)
-matchNoAgeYearVector <-c(
-                          "1983"=1985,
-                          "1984"=1985,
-                          "1986"=1985,
-                          "1988"=1987,
-                          "1990"=1989,
-                          "1992"=1991,
-                          "1994"=1993)
-
 #################################################################
+#this creates alks for years with age data
+#ageKeyTableFxn does it for individual year
 femaleALKyearsAgeDataTable <- mapply(ageKeyTableFxn,year=tagYearsYesAgeData,
                                     MoreArgs=list(sex=2,agemat=ageMat,type=1))
     names(femaleALKyearsAgeDataTable) <- tagYearsYesAgeData
@@ -166,6 +168,6 @@ femaleSurveyLengthCounts <- mapply(surveyLengthCountsFxn,
                                   SIMPLIFY=FALSE)
     names(femaleSurveyLengthCounts)<-tagYears
 ################################################################
-alkYearsNoAgeDataList <- alkYearsNoAgeDataListFxn()
+#alkYearsNoAgeDataList <- alkYearsNoAgeDataListFxn()
 
 print("hello world")
