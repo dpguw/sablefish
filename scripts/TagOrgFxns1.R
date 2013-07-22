@@ -84,12 +84,15 @@ surveyLengthNamesFxn<-function(df)
   return(df)  
 }
 #################################################################
-maxLengthFxn <- function(df,maxLength,sex)
+maxLengthFxn <- function(df,maxLengthFemale,maxLengthMale)
 {
   temp<- df$length
-  tempWhich<-which(temp>maxLength & df$sex==sex)
-  if(length(tempWhich)>0){temp[tempWhich] <- maxLength }
-  return(transform(df,lengthTrunc=temp))
+  tempWhich<-which(temp>maxLengthMale & df$sex==1)
+  if(length(tempWhich)>0){temp[tempWhich] <- maxLengthMale }
+  tempWhich<-which(temp>maxLengthFemale & df$sex==2)
+  if(length(tempWhich)>0){temp[tempWhich] <- maxLengthFemale }
+  
+  return(temp)
 }
 ##################################################################
 regionsListFxn <- function()

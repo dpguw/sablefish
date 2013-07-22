@@ -23,8 +23,7 @@ surveyLength <- surveyLengthReadInFxn(path=sableLengthDataPath,
 #####################################################
 surveyLength <- surveyLengthNamesFxn(surveyLength)
 #####################################################
-surveyLength <- maxLengthFxn(surveyLength,maxLength=79,sex=1)
-surveyLength <- maxLengthFxn(surveyLength,maxLength=89,sex=2)
+surveyLength$lengthTrunc <- maxLengthFxn(df=surveyLength,maxLengthFemale=89,maxLengthMale=79)
 ##########################################################
 surveyLength<- surveyRegionFxn(df=surveyLength,
                                regionvec=regionVec,
@@ -103,9 +102,9 @@ ageMat<-ageTablesReadInFxn(years8710file=sableAgesMainTablePath,
 ##############################################################
 ageMat$age[which(ageMat$age>20)]<-20
 ##############################################################
-ageMat <- maxLengthFxn(ageMat,maxLength=79,sex=1)
-ageMat <- maxLengthFxn(ageMat,maxLength=89,sex=2)
-releases <- maxLengthFxn(releases,maxLength=89,sex=2)
+ageMat$lengthTrunc <- maxLengthFxn(df=ageMat,maxLengthFemale=89,maxLengthMale=79)
+##############################################################
+releases$lengthTrunc <- maxLengthFxn(df=releases,maxLengthFemale=89,maxLengthMale=79)
 ##############################################################
 ageMat<-lengthBinFxn(ageseq=lengthBinVec,
                   df=ageMat,
