@@ -32,39 +32,62 @@ ageingFxn<-function(alklist,sex,releasedf,index)
   
 }
 
-aa=mapply(ageingFxn,
-       index=1:length(femaleALKyearsAgeDataTable),
-       MoreArgs=list(sex=2,releasedf=releases,alklist=femaleALKyearsAgeDataTable),
-       SIMPLIFY=FALSE)
-
-aa2=do.call("rbind",aa)
-
-bb=mapply(ageingFxn,
-       index=1:length(maleALKyearsAgeDataTable),
-       MoreArgs=list(sex=1,releasedf=releases,alklist=maleALKyearsAgeDataTable),
-       SIMPLIFY=FALSE)
-bb2=do.call("rbind",bb)
-
-#3 use alks to age releases for years WITHOUT age data
+ageingWrapperFxn<-function(femalelist,malelist)
+{
+  aa<-mapply(ageingFxn,
+         index=1:length(femalelist),
+         MoreArgs=list(sex=2,releasedf=releases,alklist=femalelist),
+         SIMPLIFY=FALSE)
+  
+  aa2<-do.call("rbind",aa)
+  
+  bb<-mapply(ageingFxn,
+         index=1:length(malelist),
+         MoreArgs=list(sex=1,releasedf=releases,alklist=malelist),
+         SIMPLIFY=FALSE)
+  bb2<-do.call("rbind",bb)
+  
+  cc<-rbind(aa2,bb2)
+  return(cc)
+}
+#3 Create alks  for years WITHOUT age data
 #using Kimura algorithm
 
 matchNoAgeYearVector
 
-alkList <- femaleALKyearsAgeDataTable
-surveyLengthCountsList <- femaleSurveyLengthCounts
+alksProp
 
-for(i in 1:length(matchNoAgeYearVector))
+ageingNoDataYears<-function(sex)
 {
-  aa<- as.character(matchNoAgeYearVector[i])
-  bb <- names(matchNoAgeYearVector[i])
-  
-  x <- as.data.frame.matrix(alkList[[aa]])
-  fi1 <- as.vector(unname(surveyLengthCountsList[[aa]]))
-  fi2 <-  as.vector(unname(surveyLengthCountsList[[bb]]))
-  cc <- kimura_chikuni(x,fi1,fi2)@alk
-  print(cc)
+    if(sex==2)
+    {
+      alkList <- femaleALKyearsAgeDataTable
+      surveyLengthCountsList <- femaleSurveyLengthCounts
+    }
+    if(sex==1)
+    {
+      alkList <- maleALKyearsAgeDataTable
+      surveyLengthCountsList <- maleSurveyLengthCounts
+    }
+    
+    cc<-vector("list",length(matchNoAgeYearVector))
+    for(i in 1:length(matchNoAgeYearVector))
+    {
+      aa<- as.character(matchNoAgeYearVector[i])
+      bb <- names(matchNoAgeYearVector[i])
+      
+      x <- as.data.frame.matrix(alkList[[aa]])
+      fi1 <- as.vector(unname(surveyLengthCountsList[[aa]]))
+      fi2 <-  as.vector(unname(surveyLengthCountsList[[bb]]))
+      cc[[i]] <- kimura_chikuni(x,fi1,fi2)@N
+    }
+    names(cc)<-names(matchNoAgeYearVector)
+  return(cc)
 }
 
+aa=ageingNoDataYears(sex=1)
+length(aa)
+######################################################
 alkList <- maleALKyearsAgeDataTable
 surveyLengthCountsList <- maleSurveyLengthCounts
 
@@ -79,6 +102,12 @@ for(i in 1:length(matchNoAgeYearVector))
   cc <- kimura_chikuni(x,fi1,fi2)@alk
   print(cc)
 }
+
+#Use alks created from Kimura algo to age releases
+
+
+
+
 
 #find what survey lengths (binned) that are not in the age data 
 #for years that are used to fill in for missing data (the years in
