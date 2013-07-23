@@ -167,6 +167,34 @@ femaleSurveyLengthCounts <- mapply(surveyLengthCountsFxn,
                                   SIMPLIFY=FALSE)
     names(femaleSurveyLengthCounts)<-tagYears
 ################################################################
-#alkYearsNoAgeDataList <- alkYearsNoAgeDataListFxn()
+#3 Create alks  for years WITHOUT age data
+#using Kimura algorithm
+maleAlkNoAgeDataYears<-ageingNoDataYears(sex=1)
+femaleAlkNoAgeDataYears<-ageingNoDataYears(sex=2)
+################################################################
+#merge alks for both year types into 1 list for each sex
+finalMaleAlkList<-mergeAlkListFxn(maleAlkNoAgeDataYears,
+                                  maleALKyearsAgeDataTable,
+                                  tagYears)
+
+finalFemaleAlkList<-mergeAlkListFxn(femaleAlkNoAgeDataYears,
+                                    femaleALKyearsAgeDataTable,
+                                    tagYears)
+##############################################################
+releases <- ageingWrapperFxn(femalelist=finalFemaleAlkList,malelist=finalMaleAlkList)
+##############################################################
+maleReleaseInfo<-tableReleasesFxn(sex=1)
+femaleReleaseInfo<-tableReleasesFxn(sex=2)
+#########################################################
+releaseInfoTablePDFfxn(maleinfo=maleReleaseInfo,
+                       femaleinfo=femaleReleaseInfo,
+                       pdf=FALSE,
+                       pdfpath=pdfPath)
+###########################################################
+releaseInfoTablePDFfxn(maleinfo=maleReleaseInfo,
+                       femaleinfo=femaleReleaseInfo,
+                       pdf=TRUE,
+                       pdfpath=pdfPath)
+####################################################
 
 print("hello world")

@@ -40,8 +40,9 @@ sexVec <- 2:1
 modelAges <- 2:20
 lengthBinVec<-seq(46,122,by=2)
 #######################################################
-maleALKpath<-"\\inputData\\malesoutput2\\outputmale"
-femaleALKpath<-"\\inputData\\femalesoutput2\\outputfemale"
+
+#deprecated: maleALKpath<-"\\inputData\\malesoutput2\\outputmale"
+#deprecated: femaleALKpath<-"\\inputData\\femalesoutput2\\outputfemale"
 sableLengthDataPath<-paste(getwd(),"\\inputData\\Sablefish_length_through2010.txt",
                            sep="")
 releasesPath <- paste(getwd(),"\\inputData\\releasesCSV.txt",sep="")
@@ -52,7 +53,7 @@ sablesAges1985Path <- paste(getwd(),"/inputData/1985_age.txt",
                             sep="")
 sablesAges1981Path <- paste(getwd(),"/inputData/1981_age.txt",
                             sep="")
-
+pdfPath <- paste(getwd(),"/output/pdf/",sep="")
 #############################################################
 regionYearDfFxn <- function(tagyearvec,regionvec)
   {
@@ -641,6 +642,132 @@ alkYearsNoAgeDataListFxn <- function(yearNoAgeData,yearAgeData,sex)
   return(alkYearsNoAgeData)
 }
 #################################################################
+ageingNoDataYears<-function(sex)
+{
+  if(sex==2)
+  {
+    alkList <- femaleALKyearsAgeDataTable
+    surveyLengthCountsList <- femaleSurveyLengthCounts
+  }
+  if(sex==1)
+  {
+    alkList <- maleALKyearsAgeDataTable
+    surveyLengthCountsList <- maleSurveyLengthCounts
+  }
+  
+  cc<-vector("list",length(matchNoAgeYearVector))
+  for(i in 1:length(matchNoAgeYearVector))
+  {
+    aa<- as.character(matchNoAgeYearVector[i])
+    bb <- names(matchNoAgeYearVector[i])
+    
+    x <- as.data.frame.matrix(alkList[[aa]])
+    fi1 <- as.vector(unname(surveyLengthCountsList[[aa]]))
+    fi2 <-  as.vector(unname(surveyLengthCountsList[[bb]]))
+    cc[[i]] <- kimura_chikuni(x,fi1,fi2)@N
+  }
+  names(cc)<-names(matchNoAgeYearVector)
+  return(cc)
+}
+#################################################################
+mergeAlkListFxn<-function(list1,list2,tagyears)
+{
+  names1<-c(names(list1),names(list2))
+  tempMatch<-match(as.character(tagyears),names1)
+  tempList<-c(list1,list2)
+  finalList<-tempList[as.vector(tempMatch)]
+  return(finalList)
+}
+##############################################################
+
+ageingFxn<-function(alklist,sex,releasedf,index)
+{
+  tempTable <- prop.table(alklist[[index]],margin=1)
+  tempYear <- as.numeric(names(alklist[index]))
+  
+  tempReleases <- releasedf[which(releasedf$HaulYear==tempYear &
+                                    releasedf$sex==sex),]
+  if(sex==2 & is.element(tempYear,c(2000,2004,2009)))
+  {
+    tempReleases$lengthTrunc[which(tempReleases$lengthBin==45)] <- 47
+  }
+  if(sex==1 & is.element(tempYear,c(2003,2005)))
+  {
+    tempReleases$lengthTrunc[which(tempReleases$lengthBin==79)] <- 77
+  }
+  if(sex==1 & is.element(tempYear,c(2005)))
+  {
+    tempReleases$lengthTrunc[which(tempReleases$lengthBin==79)] <- 77
+    tempSamp<- sample(c(45,49),
+                      size=length(which(tempReleases$lengthBin==47)),
+                      replace=T,
+                      prob=c(.5,.5))
+    tempReleases$lengthTrunc[which(tempReleases$lengthTrunc==47)]<- tempSamp 
+  }
+  
+  ageKey(tempTable,~lengthTrunc,data=tempReleases,type="SR")
+  
+}
+########################################################################
+
+ageingWrapperFxn<-function(femalelist,malelist)
+{
+  aa<-mapply(ageingFxn,
+             index=1:length(femalelist),
+             MoreArgs=list(sex=2,releasedf=releases,alklist=femalelist),
+             SIMPLIFY=FALSE)
+  
+  aa2<-do.call("rbind",aa)
+  
+  bb<-mapply(ageingFxn,
+             index=1:length(malelist),
+             MoreArgs=list(sex=1,releasedf=releases,alklist=malelist),
+             SIMPLIFY=FALSE)
+  bb2<-do.call("rbind",bb)
+  
+  cc<-rbind(aa2,bb2)
+  return(cc)
+}
+#########################################################################
+tableReleasesFxn<-function(sex)
+{
+  aa=releases$HSize[releases$sex==sex]/10
+  bb=releases$age[releases$sex==sex]
+  
+  Length<-as.numeric(as.character(cut(aa,seq(0,150,by=5),labels=seq(0,150,by=5)[-1])))
+  Age<-as.numeric(as.character(cut(bb,seq(0,20,by=5),labels=seq(0,20,by=5)[-1])))
+  cc=table(Length,Age)
+  
+  n1<-dimnames(cc)[[1]]
+  n1<-paste(n1,"-",as.numeric(n1)+4,sep="")
+  n2<-c("2-5","6-10","11-15","16-20")
+  dimnames(cc)[[1]]<-n1
+  dimnames(cc)[[2]]<-n2
+  return(cc)    
+}
+##############################################################
+
+releaseInfoTablePDFfxn <- function(maleinfo,femaleinfo,pdf=FALSE,pdfpath)
+{
+  if(pdf==TRUE){pdf(paste(pdfpath,"releaseData.pdf",sep=""))}
+  if(pdf==FALSE){windows()}
+  par(mfrow=c(2,2),mar=c(2,2,2,2),oma=c(2,4,2,4))
+  plot(1:10,1:10,axes=F,type='n')
+  addtable2plot(1,1,data.matrix(maleinfo),display.rownames =T,bty="o")
+  mtext("ages",side=3,line=-4,adj=.5,lwd=2)
+  mtext("MALES",side=3,line=-3,adj=.5,lwd=2,col="blue")
+  mtext("length (cm)",side=2,line=0,adj=.34,lwd=4)
+  
+  plot(1:10,1:10,axes=F,type='n')
+  addtable2plot(0,0,data.matrix(femaleinfo),display.rownames =T,bty="o")
+  mtext("ages",side=3,line=-1,adj=.5,lwd=2)
+  mtext("FEMALES",side=3,line=0,adj=.5,lwd=2,col="blue")
+  mtext("length (cm)",side=2,line=1,adj=.34,lwd=4)
+  mtext("Releases by age and length bin", cex=1.3,outer=T,side=3,line=0)
+  
+  if(pdf==TRUE){dev.off()}
+}
+#########################################################################
 releasesForADMB<-function(year,sexType,relarea,releasedf)
   {
   
